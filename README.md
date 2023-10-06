@@ -22,7 +22,7 @@ pip3 install pyserial pypng
 - Debes hacer una conexión mediante pines para conectar la Huskylens a SpikePrime. Hay dos opciones sin un convertidor dc-dc y otro con un convertidor. La Husky 3v3 en su fuente de alimentación y los cables RX y TX conectados. La camara es resistente a 5 volteos, pero la comunicación se encuentra obstaculizada. Ya que no tenia un regulador fijo 3v3, asi que puedes usar un convertir más grande pero sintonizable.
 
   ### Opcion 1: Version sin dc-dc converter![dc-dc](https://www.antonsmindstorms.com/wp-content/uploads/2021/10/Paper.Sketchbook.97.png#main)
-  - Suelde los calbes de HuskyLens incluidos a un conector Wedo2plug de respuesto 5 y 6(líneas ID1/ID2) a través de UART a los pines 2 y 1 de HuskyLens(RX/TX)
+  - Suelde los cables de HuskyLens incluidos a un conector Wedo2plug de respuesto 5 y 6(líneas ID1/ID2) a través de UART a los pines 2 y 1 de HuskyLens(RX/TX)
 
   ### Opcion 2: Poder con un 100% pwm ![dc-dc](https://www.antonsmindstorms.com/wp-content/uploads/2021/10/Paper.Sketchbook.98.png#main)
   - La alimentación de la Huskylens se realiza con una batería USB o LPF mediante la conexión a un convertidor reductor 3V3. Sin configura el puerto al 100% PWM, M+ será aproximadamente 8V y M- será 0V(GND).
