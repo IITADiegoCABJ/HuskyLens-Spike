@@ -18,7 +18,7 @@ Una camara de inteligencia artificial con diversos modos de funcionamientos.
 pip3 install pyserial pypng
   ```
 
-## Configuración de HuskyLens
+## Configuración Hardware de HuskyLens
 - Debes hacer una conexión mediante pines para conectar la Huskylens a SpikePrime. Hay dos opciones sin un convertidor dc-dc y otro con un convertidor. La Husky 3v3 en su fuente de alimentación y los cables RX y TX conectados. La camara es resistente a 5 volteos, pero la comunicación se encuentra obstaculizada. Ya que no tenia un regulador fijo 3v3, asi que puedes usar un convertir más grande pero sintonizable.
 
   ### Opcion 1: Version sin dc-dc converter![dc-dc](https://www.antonsmindstorms.com/wp-content/uploads/2021/10/Paper.Sketchbook.97.png#main)
@@ -38,3 +38,8 @@ pip3 install pyserial pypng
 3. Una vez que lo ejecutes y se instale correctamente en el hub, borra ese proyecto.
 4. Crea uno nuevo con el nombre que más te guste.
 5. Pega el codigo de [SPIKE-Example](https://github.com/IITADiegoCABJ/HuskyLens-Spike/blob/main/Libreria/Spike-Example.py).
+
+## Configuración Software de HuskyLens
+- Para utilizar los diversos funcionamientos que tiene esta camara inteligente artificial debes conocer las clases.
+- La camara permite cargar, reconocer, leer todo tipo de objeto. Pero debes especificar que vas a usar en tu codigo.
+- Para más información de esto ve a [Ejemplos de clases](https://github.com/IITADiegoCABJ/HuskyLens-Spike/tree/main/Ejemplo-Clases)
