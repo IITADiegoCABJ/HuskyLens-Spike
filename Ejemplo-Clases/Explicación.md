@@ -76,4 +76,58 @@ Inicia el tipo de clase de HuskyLens y automaticamente se conectara a tu camara.
     **Returns**: Devuelve un array `[block1, block2, ... blockN]`
 
 
+**_arrows()_**
+  - **Descripción**: Hace un request de todas las arrow data que se encuentran dentro de la HuskyLens. Esto devolvera la información de los bloques aprendida y de objetos no aprendidos seran visibles en la pantalla.
+    **Returns**: Devuelve un array `[arrow1, arrow2, ... arrowN]`
+
+
+**_learned()_**
+  - **Descripción**: Manda un request a toda la información que reconozcoa sobre arrows y bloques de la HuskyLenss. Esto devolvera el conocimiento aprendido que tenga sobre los objetos visibles en la pantalla. Los objetos no aprendidos seran ignorados.
+
+    **Returns**¨: Returns data array `[block1, block2, ... blockN]` or `[arrow1, arrow2, ... arrowN]`
+
+**_learnedBlocks()_**
+  - **Descripción**: Solicita todos los datos de block que tiene la HuskyLens. Esto devolverá los datos del block para todos los objetos aprendidos que son visibiles en la pantalla, los objetos no aprendidos se ignoran.
+    **Returns**: Devuelve un array `[block1, block2, ... blockN]`
+
+
+
+**_learnedArrows()_**
+  - **Descripción**:Solicitda todos los datos de las arrows que tiene la HuskyLens. Esto devolverá los datos de las arros para todos los objetos aprendidos seran visibles en las pantallas, pero los que no seran ignorados.
+
+    **Returns**: Devuelve un array `[arrow1, arrow2, ... arrowN]`
+
+
+**_getObjectByID( ID )_**
+  - **Descripción**: Solicita todos los datos del block de la HuskyLens que tengan una ID designada y sean visibles en la pantalla.
+
+    **Argumentos**: ID : (Entero) El ID del objeto.
+
+    **_Returns_**: Devuelve un array `[block1, block2, ... blockN]`
+
+**_getArrowsByID( ID )_**
+  - **Descripción**: Solicita todos los datos de las arrows de la HuskyLens que tengan una ID designada y sean visibles en la pantalla.
+
+    **Argumentos**: ID : (Entero) El ID del objeto.
+
+    **_Returns_**: Devuelve un array `[arrow1, arrow2, ... arrowN]`
+
+## Funciones mediante Algoritmos
+**algorithm ( algorithmName )**
+  - **Descripción**: Cambia a un algoritmo especifico de la HuskyLens.
+
+    **Argumentos**:
+
+    **_algorithmName_**: (String)
+      > “ALGORITHM_OBJECT_TRACKING”
+      > “ALGORITHM_FACE_RECOGNITION”
+      > “ALGORITHM_OBJECT_RECOGNITION”
+      > “ALGORITHM_LINE_TRACKING”
+      > “ALGORITHM_COLOR_RECOGNITION”
+      > “ALGORITHM_TAG_RECOGNITION”
+      > “ALGORITHM_OBJECT_CLASSIFICATION”
+
+    **Returns**: Si esta todo correcto devuelve un "Knock".
+
+
 
