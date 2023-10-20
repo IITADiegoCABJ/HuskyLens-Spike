@@ -103,14 +103,14 @@ Inicia el tipo de clase de HuskyLens y automaticamente se conectara a tu camara.
 
     **Argumentos**: ID : (Entero) El ID del objeto.
 
-    **_Returns_**: Devuelve un array `[block1, block2, ... blockN]`
+    **Returns**: Devuelve un array `[block1, block2, ... blockN]`
 
 **_getArrowsByID( ID )_**
   - **Descripción**: Solicita todos los datos de las arrows de la HuskyLens que tengan una ID designada y sean visibles en la pantalla.
 
     **Argumentos**: ID : (Entero) El ID del objeto.
 
-    **_Returns_**: Devuelve un array `[arrow1, arrow2, ... arrowN]`
+    **Returns**: Devuelve un array `[arrow1, arrow2, ... arrowN]`
 
 ## Funciones mediante Algoritmos
 **algorithm ( algorithmName )**
@@ -151,4 +151,81 @@ Inicia el tipo de clase de HuskyLens y automaticamente se conectara a tu camara.
 
 ## UI Related Functions
 **_setCustomName("Name_Value", objectID)_**
- **_Descripción_**: Poner un nombre customizado de un objeto aprendido con una ID especifica. Por ejemplo 
+
+ **_Descripción_**: Poner un nombre customizado de un objeto aprendido con una ID especifica. Por ejemplo, si aprendio alguna ID, podes usar huskylens.setCustomName("Robert", 1) para renombrar la cara del objeto de "Robert".
+
+ **_Argumentos_**: 
+ `"Name_Value"`: (String) valor deseado.
+ `objectID`: (Interger) valor de la ID del objeto aprendido que deseas cambiar.
+
+ **Returns**: Devuelve un Knock si funciona.
+
+**_customText("Text_Value", X, Y)_**
+
+  - **Descripción**:
+          Coloque una cadena de texto (menos de 20 caracteres) en la parte superior de la interfaz de usuario de     
+          HuskyLens. La posición de la coordenada (X,Y) del texto es la parte superior izquierda del cuadro de texto.
+
+          Puedes tener como máximo 10 textos personalizados en la IU a la vez, y si sigues añadiendo textos 
+          reemplazarás los textos anteriores de forma circular. Por ejemplo, si introduce 10 textos llenará el búfer 
+          de texto. Si luego insertas un nuevo objeto de texto, sobrescribirás la primera posición de texto 
+          (textBuffer[0]). Si inserta otro objeto de texto nuevo, sobrescribirá la segunda posición de texto 
+          (textBuffer[1]).
+
+          Cada texto se identifica de forma única por su coordenada (X,Y), por lo que puedes reemplazar la cadena de 
+          texto en una coordenada (X,Y) en lugar de añadir un nuevo objeto de texto. Por ejemplo, si insertas     
+          "PRUEBA_1" en (120,120) y más tarde envías "PRUEBA_2" en (120,120), sustituirás la cadena "PRUEBA_1" por 
+          "PRUEBA_2" y mantendrás un recuento total de texto de 1.
+
+
+    **_Argumentos_**:
+        `"Text_Value"`: (String) valor del texto mandado.
+
+        `X`: (Integer) La coordinada X para el objeto UI (0-320)
+
+        `Y`: (Integer) La coordenada Y para el objeto UI (0-240)
+
+    **Returns**: Devuelve un Knock si todo esta correcto
+
+
+**_clearText()_**
+
+  - **Descripción**: Borra y elimina todas las customizaciones UI texto de la screen.
+
+
+    **Returns**: Devuelve un Knock si todo esta correcto.
+
+
+## Funciones de Utilidad
+**_saveModelToSDCard( fileNum )_**
+  - **Descripción**: Guarda todos los algoritmos en la carpeta(Los objetos aprendidos) en la tarjeta SD. La carpeta se guardara en el formato "AlgorithimName_Backup´_FileNum.conf".
+
+    **Argumentos**:
+      `fileNum`: (Integer) El numero de archivo especificado que se utilizará en el nombre del archivo.
+
+    **Returns**: Devuelve "Golpe recibido" en caso de éxito. Si no hay ninguna tarjeta SD insertada o se produce un
+error en la tarjeta SD, aparecerá una ventana emergente de la interfaz de usuario de HuskyLens indicando el problema.
+
+**_loadModelFromSDCard( fileNum )_**
+  - **Descripción**: Carga un archivo de modelo desde la tarjeta SD al algoritmo actual y actualiza el algoritmo. El
+archivo cargado tendrá el siguiente formato "AlgorithimName_Backup_FileNum.conf"
+
+    **Argumentos**:
+      `fileNum`: (Integer) Especifica el numero de la carpeta que va a ser usado para el nombre.
+
+    **Returns**: Devuelve "Golpe recibido" en caso de éxito. Si no hay ninguna tarjeta SD insertada o se produce un
+error en la tarjeta SD, aparecerá una ventana emergente de la interfaz de usuario de HuskyLens indicando el problema.
+
+
+**_savePictureToSDCard()_**:
+  - **Descripción**: Guarda la foto en la HuskyLens dentro de la tarjeta SD.
+
+    **Returns**: Devuelve "Golpe recibido" en caso de éxito. Si no hay ninguna tarjeta SD insertada o se produce un
+error en la tarjeta SD, aparecerá una ventana emergente de la interfaz de usuario de HuskyLens indicando el problema.
+
+
+**_saveScreenshotToSDCard()_**
+  - **Descripción**: Guarda la Screenshot en la HuskyLens UI dentro de la tarjeta SD.
+
+    **Returns**: Devuelve "Golpe recibido" en caso de éxito. Si no hay ninguna tarjeta SD insertada o se produce un
+error en la tarjeta SD, aparecerá una ventana emergente de la interfaz de usuario de HuskyLens indicando el problema.
