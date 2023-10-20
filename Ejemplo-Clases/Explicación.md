@@ -117,17 +117,38 @@ Inicia el tipo de clase de HuskyLens y automaticamente se conectara a tu camara.
   - **Descripción**: Cambia a un algoritmo especifico de la HuskyLens.
 
     **Argumentos**:
-
     **_algorithmName_**: (String)
       > “ALGORITHM_OBJECT_TRACKING”
+      > 
       > “ALGORITHM_FACE_RECOGNITION”
+      > 
       > “ALGORITHM_OBJECT_RECOGNITION”
+      > 
       > “ALGORITHM_LINE_TRACKING”
+      > 
       > “ALGORITHM_COLOR_RECOGNITION”
+      > 
       > “ALGORITHM_TAG_RECOGNITION”
+      > 
       > “ALGORITHM_OBJECT_CLASSIFICATION”
 
     **Returns**: Si esta todo correcto devuelve un "Knock".
 
+**_learn( ID )_**
+  - **Descripción**: Aprende los objetos que son reconocidos en la pantalla por una ID.
 
 
+    **Argumentos**:
+      `ID`: (Integer) La id puede ser entre 1-1023.
+
+    **Returns**: Devuelve un Knock si funciona.
+
+**_forget()_** 
+  - **Descripción**: Se olvida todos los objetos que estan corriendo ahora mismo en el algoritmo.
+
+    **Returns**: Devuelve un Knock si es exitoso.
+
+
+## UI Related Functions
+**_setCustomName("Name_Value", objectID)_**
+ **_Descripción_**: Poner un nombre customizado de un objeto aprendido con una ID especifica. Por ejemplo 
